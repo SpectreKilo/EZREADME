@@ -62,16 +62,25 @@ This project ${data.projectUsage} by ${data.projectUsageHow}.
 - [Questions](#Questions)
 
 ## Installation
+To install this project you should ${data.projectInstall}.
+
 ## Usage
-## License
+This project is used to ${data.projectUsage}.
+
+${renderLicenseSection(data.license)}
+
 ## Contributing
+To contribute to the project you should ${data.projectContributions}.
+
 ## Tests
+If you want to test the project you should ${data.projectTest}.
+
 ## Questions?
+My GitHub username is ${data.username}, you may also email me at ${data.projectEmail}
   
   
   
   
-  `
-}
+`};
 
 module.exports = createREADME;
