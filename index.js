@@ -4,7 +4,7 @@ const fs = require("fs");
 const createREADME = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
-const questions = [
+const data = [
     {
         type: "input",
         message: "What is your GitHub username?",
@@ -31,6 +31,12 @@ const questions = [
     },
     {
         type: "input",
+        message: "How does your project work?",
+        name: "projectUsageHow",
+
+    },
+    {
+        type: "input",
         message: "How do you add to this project?",
         name: "projectContributions",
 
@@ -49,16 +55,16 @@ const questions = [
     },
     {   type: "list",
         message: "Choose a license",
-        name: "projectLicense",
+        name: "license",
         choices: ["no license", "MIT", "Mozilla Public License 2.0", "Apache 2.0 License", "BSD 2-Clause License",  ]
 
     },
 ];
 
 inquirer
-    .prompt(questions)
+    .prompt(data)
     .then((response) =>{
-    console.log(questions)
+    console.log(data)
     fs.writeFileSync("README.MD", createREADME(response), (err) => err? console.log(err) : console.log("response written to file") );
 })
 // // TODO: Create a function to write README file
